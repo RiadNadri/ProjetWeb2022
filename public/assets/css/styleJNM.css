@@ -93,7 +93,7 @@ bloc{
 .connexion{
     position: fixed;
     left: 84%;
-    top: 4%;
+    top: 5%;
     color: bisque;
     border-style: solid;
     border-color: bisque;
@@ -105,8 +105,8 @@ bloc{
 
 .inscription{
     position: fixed;
-    left: 84%;
-    top: 9%;
+    left: 70%;
+    top: 15%;
     color: bisque;
     border-style: solid;
     border-color: bisque;
