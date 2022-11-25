@@ -21,8 +21,15 @@ class Reservation
     private ?float $tarif = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?typeReservation $refType = null;
+    private ?logement $refLogement = null;
+
+    #[ORM\ManyToOne(inversedBy: 'reservations')]
+    private ?Transport $refTransport = null;
+
+    #[ORM\ManyToOne(inversedBy: 'reservations')]
+    private ?Activites $refActivite = null;
+
+    
 
     public function getId(): ?int
     {
@@ -53,15 +60,41 @@ class Reservation
         return $this;
     }
 
-    public function getRefType(): ?typeReservation
+    public function getRefLogement(): ?logement
     {
-        return $this->refType;
+        return $this->refLogement;
     }
 
-    public function setRefType(?typeReservation $refType): self
+    public function setRefLogement(?logement $refLogement): self
     {
-        $this->refType = $refType;
+        $this->refLogement = $refLogement;
 
         return $this;
     }
+
+    public function getRefTransport(): ?Transport
+    {
+        return $this->refTransport;
+    }
+
+    public function setRefTransport(?Transport $refTransport): self
+    {
+        $this->refTransport = $refTransport;
+
+        return $this;
+    }
+
+    public function getRefActivite(): ?Activites
+    {
+        return $this->refActivite;
+    }
+
+    public function setRefActivite(?Activites $refActivite): self
+    {
+        $this->refActivite = $refActivite;
+
+        return $this;
+    }
+
+    
 }

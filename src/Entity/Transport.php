@@ -2,23 +2,23 @@
 
 namespace App\Entity;
 
-use App\Repository\TypeReservationRepository;
+use App\Repository\TransportRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: TypeReservationRepository::class)]
-class TypeReservation
+#[ORM\Entity(repositoryClass: TransportRepository::class)]
+class Transport
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $nom = null;
+    #[ORM\Column]
+    private ?bool $forfait_navigo = null;
 
-    #[ORM\OneToMany(mappedBy: 'refType', targetEntity: Reservation::class)]
+    #[ORM\OneToMany(mappedBy: 'refTransport', targetEntity: Reservation::class)]
     private Collection $reservations;
 
     public function __construct()
@@ -31,14 +31,14 @@ class TypeReservation
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function isForfaitNavigo(): ?bool
     {
-        return $this->nom;
+        return $this->forfait_navigo;
     }
 
-    public function setNom(string $nom): self
+    public function setForfaitNavigo(bool $forfait_navigo): self
     {
-        $this->nom = $nom;
+        $this->forfait_navigo = $forfait_navigo;
 
         return $this;
     }
@@ -55,7 +55,7 @@ class TypeReservation
     {
         if (!$this->reservations->contains($reservation)) {
             $this->reservations->add($reservation);
-            $reservation->setRefType($this);
+            $reservation->setRefTransport($this);
         }
 
         return $this;
@@ -65,8 +65,8 @@ class TypeReservation
     {
         if ($this->reservations->removeElement($reservation)) {
             // set the owning side to null (unless already changed)
-            if ($reservation->getRefType() === $this) {
-                $reservation->setRefType(null);
+            if ($reservation->getRefTransport() === $this) {
+                $reservation->setRefTransport(null);
             }
         }
 
