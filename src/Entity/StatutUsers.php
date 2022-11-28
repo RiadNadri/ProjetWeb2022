@@ -11,12 +11,12 @@ class StatutUsers
     
     #[ORM\Id]
     #[ORM\ManyToOne(inversedBy: 'statutUsers')]
-    private ?statut $refStatut = null;
+    private ?Statut $refStatut = null;
 
     #[ORM\Id]
     #[ORM\ManyToOne(inversedBy: 'statutUsers')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $refUser = null;
+    private ?User $refUser = null;
 
     
 
@@ -32,12 +32,12 @@ class StatutUsers
         return $this;
     }
 
-    public function getRefUser(): ?user
+    public function getRefUser(): ?User
     {
         return $this->refUser;
     }
 
-    public function setRefUser(?user $refUser): self
+    public function setRefUser(?User $refUser): self
     {
         $this->refUser = $refUser;
 

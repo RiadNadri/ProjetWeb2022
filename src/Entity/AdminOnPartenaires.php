@@ -17,7 +17,7 @@ class AdminOnPartenaires
     #[ORM\Id]
     #[ORM\ManyToOne(inversedBy: 'adminOnPartenaires')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?partenaire $refPartenaire = null;
+    private ?Partenaire $refPartenaire = null;
 
     
 

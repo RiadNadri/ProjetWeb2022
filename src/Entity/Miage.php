@@ -22,7 +22,7 @@ class Miage
     private ?int $numtel = null;
 
     #[ORM\ManyToOne(inversedBy: 'miages')]
-    private ?concours $refconcours = null;
+    private ?Concours $refconcours = null;
 
     #[ORM\OneToMany(mappedBy: 'refMiage', targetEntity: User::class)]
     private Collection $users;
@@ -61,12 +61,12 @@ class Miage
         return $this;
     }
 
-    public function getRefconcours(): ?concours
+    public function getRefconcours(): ?Concours
     {
         return $this->refconcours;
     }
 
-    public function setRefconcours(?concours $refconcours): self
+    public function setRefconcours(?Concours $refconcours): self
     {
         $this->refconcours = $refconcours;
 

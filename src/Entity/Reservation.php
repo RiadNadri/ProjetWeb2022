@@ -21,7 +21,7 @@ class Reservation
     private ?float $tarif = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]
-    private ?logement $refLogement = null;
+    private ?Logement $refLogement = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     private ?Transport $refTransport = null;
@@ -60,12 +60,12 @@ class Reservation
         return $this;
     }
 
-    public function getRefLogement(): ?logement
+    public function getRefLogement(): ?Logement
     {
         return $this->refLogement;
     }
 
-    public function setRefLogement(?logement $refLogement): self
+    public function setRefLogement(?Logement $refLogement): self
     {
         $this->refLogement = $refLogement;
 

@@ -13,12 +13,12 @@ class AdminOnUsers
     #[ORM\Id]
     #[ORM\ManyToOne(inversedBy: 'adminOnUsers')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?admin $refAdmins = null;
+    private ?Admin $refAdmins = null;
 
     #[ORM\Id]
     #[ORM\ManyToOne(inversedBy: 'adminOnUsers')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $refUser = null;
+    private ?User $refUser = null;
 
     
 
@@ -34,12 +34,12 @@ class AdminOnUsers
         return $this;
     }
 
-    public function getRefUser(): ?user
+    public function getRefUser(): ?User
     {
         return $this->refUser;
     }
 
-    public function setRefUser(?user $refUser): self
+    public function setRefUser(?User $refUser): self
     {
         $this->refUser = $refUser;
 
