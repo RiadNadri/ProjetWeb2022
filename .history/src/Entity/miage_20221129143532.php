@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Miage;
 use App\Repository\MiageRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -103,6 +104,5 @@ class Miage
         return $this;
     }
 
-    
     
 }

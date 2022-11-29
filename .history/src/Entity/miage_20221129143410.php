@@ -103,6 +103,7 @@ class Miage
         return $this;
     }
 
-    
-    
+    public function toString():{
+
+    }
 }

@@ -19,7 +19,7 @@ class Miage
     private ?string $universite = null;
 
     #[ORM\Column]
-    private ?int $numtel = null;
+    private ?double $numtel = null;
 
     #[ORM\ManyToOne(inversedBy: 'miages')]
     private ?Concours $refconcours = null;
@@ -103,6 +103,7 @@ class Miage
         return $this;
     }
 
-    
-    
+    public function toString():{
+
+    }
 }

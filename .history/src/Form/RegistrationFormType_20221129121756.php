@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\User;
-use App\Entity\Miage;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -26,8 +25,7 @@ class RegistrationFormType extends AbstractType
             ->add('adresse')
             ->add('telephone')
             ->add('refMiage',EntityType::class,[
-                'class'=> Miage::class,
-                'choice_label'=>'universite'
+                'class'=> Miage::class
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,

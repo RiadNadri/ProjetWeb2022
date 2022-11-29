@@ -102,7 +102,4 @@ class Miage
 
         return $this;
     }
-
-    
-    
 }
