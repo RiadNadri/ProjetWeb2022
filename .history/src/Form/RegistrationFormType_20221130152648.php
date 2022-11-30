@@ -24,7 +24,9 @@ class RegistrationFormType extends AbstractType
             ->add('email')
             ->add('nom')
             ->add('prenom')
-            ->add('date_naissance', BirthdayType::class,[])
+            ->add('date_naissance', BirthdayType::class,[
+
+            ])
             ->add('adresse')
             ->add('telephone')
             ->add('refMiage',EntityType::class,[
@@ -33,7 +35,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('statutUsers',EntityType::class,[
                 'class'=> StatutUsers::class,
-                'choice_label'=>'nom'
+                'choice_label'=>'refStatut'
                 
             ])
             ->add('agreeTerms', CheckboxType::class, [

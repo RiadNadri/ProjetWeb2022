@@ -11,7 +11,6 @@
         
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         
-        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{ asset('assets/css/templatemo-breezed.css')}}">
         
         {% block stylesheets %}{% endblock %}
@@ -32,12 +31,12 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="{{path('app_accueil')}}" >Accueil</a></li>
-                            <li class="scroll-to-section"><a href="#about">À propos</a></li>
+                            <li class="scroll-to-section"><a href="{{path('app_accueil')}}" class="active">Accueil</a></li>
+                            <li class="scroll-to-section"><a href="#about" class="active">À propos</a></li>
                             <li class="scroll-to-section"><a href="#connexion">Connexion</a></li>
                             <li class="scroll-to-section"><a href="{{path('app_inscription')}}">Inscription</a></li>
                             <li class="scroll-to-section"><a href="#réservation">Réservation</a></li>
-                            <li class="scroll-to-section"><a href="#contact-us" class="active">Contactez-Nous</a></li>
+                            <li class="scroll-to-section"><a href="#contact-us">Contactez-Nous</a></li>
                             
 
                         </ul>        
@@ -151,7 +150,7 @@
             </div>
         </div>
     </section>
-    {% endblock %}
+        
 
     <section class="section" id="contact-us">
         <div class="container">
@@ -172,7 +171,7 @@
         </div>
     </section>
 
-    
+    {% endblock %}
     </body>
 
 
@@ -184,7 +183,17 @@
                         <a rel="nofollow noopener" href="https://www.parisnanterre.fr/" target="_blank"><img src="{{ asset('img/Icone.png')}}" alt=""><br>Copyright &copy; 2022 Fond de la classe Co., Ltd. </a>
                     </div>
                 </div>
-                
+                <div class="col-lg-6 col-xs-12">
+                    <div class="right-text-content">
+                            <ul class="social-icons">
+                                <li><p>Follow Us</p></li>
+                                <li><a rel="nofollow" href="https://fb.com/templatemo"></a></li>
+                                <li><a rel="nofollow" href="https://fb.com/templatemo"></i></a></li>
+                                <li><a rel="nofollow" href="https://fb.com/templatemo"></i></a></li>
+                                <li><a rel="nofollow" href="https://fb.com/templatemo"></a></li>
+                            </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

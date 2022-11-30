@@ -33,7 +33,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('statutUsers',EntityType::class,[
                 'class'=> StatutUsers::class,
-                'choice_label'=>'nom'
+                'choice_label'=>'refStatut'
                 
             ])
             ->add('agreeTerms', CheckboxType::class, [

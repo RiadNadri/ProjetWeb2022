@@ -9,7 +9,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
@@ -24,7 +23,7 @@ class RegistrationFormType extends AbstractType
             ->add('email')
             ->add('nom')
             ->add('prenom')
-            ->add('date_naissance', BirthdayType::class,[])
+            ->add('date_naissance')
             ->add('adresse')
             ->add('telephone')
             ->add('refMiage',EntityType::class,[
@@ -32,8 +31,8 @@ class RegistrationFormType extends AbstractType
                 'choice_label'=>'universite'
             ])
             ->add('statutUsers',EntityType::class,[
-                'class'=> StatutUsers::class,
-                'choice_label'=>'nom'
+                'class'=> StatutUsers::class
+                'choice_label'=>'refStatut'
                 
             ])
             ->add('agreeTerms', CheckboxType::class, [

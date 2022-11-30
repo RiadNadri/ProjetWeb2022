@@ -3,7 +3,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Miage;
-use App\Entity\Statut;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -14,7 +13,6 @@ class AppFixtures extends Fixture
         // $product = new Product();
         // $manager->persist($product);
 
-        //MIAGE
         //Amiens
 
         $amiens=new Miage();
@@ -54,30 +52,32 @@ class AppFixtures extends Fixture
         //STATUTS 
         
         //Etudiant
-        $etudiant=new Statut();
-        $etudiant->setNom('Etudiant');
+        $nice=new Statut();
+        $nice->setNom('Etudiant');
 
         //Ancien diplômé
-        $diplome=new Statut();
-        $diplome->setNom('Ancien diplômé');
+        $nice=new Statut();
+        $nice->setNom('Ancien diplômé');
 
         //Enseignant
-        $teacher=new Statut();
-        $teacher->setNom('Enseignant');
+        $nice=new Statut();
+        $nice->setNom('Enseignant');
 
         //Directeur de MIAGE
-        $dir=new Statut();
-        $dir->setNom('Directeur de MIAGE');
+        $nice=new Statut();
+        $nice->setNom('Directeur de MIAGE');
 
         //Membre de BDE
-        $membreBDE=new Statut();
-        $membreBDE->setNom('Membre de BDE');
+        $nice=new Statut();
+        $nice->setNom('Membre de BDE');
 
         //Membre de CA de l'association
-        $membreCA=new Statut();
-        $membreCA->setNom('Membre de CA de l\'association');
+        $nice=new Statut();
+        $nice->setNom('Membre de CA de l\'association');
 
-        
+        //Etudiant
+        $nice=new Statut();
+        $nice->setNom('Etudiant');
         
 
 
@@ -87,13 +87,6 @@ class AppFixtures extends Fixture
         $manager->persist($orleans);
         $manager->persist($rennes);
         $manager->persist($nice);
-
-        $manager->persist($etudiant);
-        $manager->persist($diplome);
-        $manager->persist($teacher);
-        $manager->persist($dir);
-        $manager->persist($membreBDE);
-        $manager->persist($membreCA);
 
 
         $manager->flush();

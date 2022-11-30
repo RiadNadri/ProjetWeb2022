@@ -14,7 +14,6 @@ class AppFixtures extends Fixture
         // $product = new Product();
         // $manager->persist($product);
 
-        //MIAGE
         //Amiens
 
         $amiens=new Miage();
