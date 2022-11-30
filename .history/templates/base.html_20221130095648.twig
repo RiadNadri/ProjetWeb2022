@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}{% endblock %} - JNM</title>
+        <title>{% block title %}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" type= "image/png" href="{{ asset('img/favicon.png')}}" />
+        <link rel="shortcut icon" type= "image/png" href="{{ asset('img/LogoNanterre.png')}}" />
         
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         
@@ -19,23 +19,22 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-    
         <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="{{path('app_accueil')}}" class="logo">
+                        <a href="{{path('app_projet')}}" class="logo">
                             JNM
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="{{path('app_accueil')}}" class="active">Accueil</a></li>
+                            <li class="scroll-to-section"><a href="#top" class="active">Accueil</a></li>
                             <li class="scroll-to-section"><a href="#about" class="active">À propos</a></li>
                             <li class="scroll-to-section"><a href="#connexion">Connexion</a></li>
-                            <li class="scroll-to-section"><a href="{{path('app_inscription')}}">Inscription</a></li>
+                            <li class="scroll-to-section"><a href="{{path('app_register')}}">Inscription</a></li>
                             <li class="scroll-to-section"><a href="#réservation">Réservation</a></li>
                             <li class="scroll-to-section"><a href="#contact-us">Contactez-Nous</a></li>
                             
@@ -49,7 +48,6 @@
         </div>
     </header>
 
-    {% block body %}
     <section class="section" id="about">
         <div class="container">
             <div class="row">
@@ -109,13 +107,13 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                     <div class="features-item">
                         <div class="features-icon">
-                            <img src="{{ asset('img/Icone.png')}}" height="30px" width="30px" alt="">
+                            <img src="{{asset('img/features-icon-1.png')}}" alt="">
                         </div>
                         <div class="features-content">
                             <h4>Le campus de Nanterre</h4>
                             <p>Proin euismod sem ut diam ultricies, ut faucibus velit ultricies. Nam eu turpis quam. Duis ac condimentum eros.</p>
                             <a href="https://www.parisnanterre.fr/" target="_blank" class="text-button-icon">
-                                En savoir plus
+                                En savoir plus <i class="fa fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
@@ -123,13 +121,13 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter bottom move 30px over 0.6s after 0.4s">
                     <div class="features-item">
                         <div class="features-icon">
-                            <img src="{{ asset('img/miage.png')}}" height="30px" width="30px" alt="">
+                            <img src="{{asset('img/features-icon-1.png')}}" alt="">
                         </div>
                         <div class="features-content">
                             <h4>La Miage de Nanterre</h4>
                             <p>Proin euismod sem ut diam ultricies, ut faucibus velit ultricies. Nam eu turpis quam. Duis ac condimentum eros.</p>
                             <a href="#" class="text-button-icon">
-                                En savoir plus
+                                En savoir plus <i class="fa fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
@@ -137,13 +135,13 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
                     <div class="features-item">
                         <div class="features-icon">
-                            <img src="{{ asset('img/eiffel.png')}}" height="50px" width="50px"alt="">
+                            <img src="{{asset('img/features-icon-1.png')}}" alt="">
                         </div>
                         <div class="features-content">
                             <h4>Le séjour à Paris</h4>
                             <p>Proin euismod sem ut diam ultricies, ut faucibus velit ultricies. Nam eu turpis quam. Duis ac condimentum eros.</p>
                             <a href="#" class="text-button-icon">
-                                En savoir plus
+                                En savoir plus <i class="fa fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
@@ -159,11 +157,11 @@
                 <div class="col-lg-4 col-md-4 col-xs-12">
                     <div class="left-text-content">
                         <div class="section-heading">
-                            <h6>Si vous avez des questions, Contactez-nous via les canaux suivants :</h6>
+                            <h2>Si vous avez des questions, Contactez-nous via les canaux suivants :</h2>
                         </div>
                         <ul class="contact-info">
-                            <li><img src="{{ asset('img/contact-info-01.png')}}" alt="">010-020-0860</li>
-                            <li><img src="{{ asset('img/contact-info-02.png')}}" alt=""><a href="mailto:40006679@parisnanterre.fr">40006679@parisnanterre.fr</a></li>
+                            <li><img src="{{asset('img/contact-info-01.png')}}" alt="">010-020-0860</li>
+                            <li><img src="{{asset('img/contact-info-02.png')}}" alt="">info@company.com</li>
                         </ul>
                     </div>
                 </div>
@@ -172,26 +170,26 @@
         </div>
     </section>
 
-    {% endblock %}
     </body>
-
 
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-xs-12">
                     <div class="left-text-content">
-                        <a rel="nofollow noopener" href="https://www.parisnanterre.fr/" target="_blank"><img src="{{ asset('img/Icone.png')}}" alt=""><br>Copyright &copy; 2022 Fond de la classe Co., Ltd. </a>
+                        <p>Copyright &copy; 2020 Breezed Co., Ltd. 
+                        
+                        - Design: <a rel="nofollow noopener" href="https://templatemo.com">TemplateMo</a></p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-xs-12">
                     <div class="right-text-content">
                             <ul class="social-icons">
                                 <li><p>Follow Us</p></li>
-                                <li><a rel="nofollow" href="https://fb.com/templatemo"></a></li>
-                                <li><a rel="nofollow" href="https://fb.com/templatemo"></i></a></li>
-                                <li><a rel="nofollow" href="https://fb.com/templatemo"></i></a></li>
-                                <li><a rel="nofollow" href="https://fb.com/templatemo"></a></li>
+                                <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-facebook"></i></a></li>
+                                <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-twitter"></i></a></li>
+                                <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-dribbble"></i></a></li>
                             </ul>
                     </div>
                 </div>

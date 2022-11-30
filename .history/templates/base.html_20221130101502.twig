@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}{% endblock %} - JNM</title>
+        <title>{% block title %}Page d'acceuil{% endblock %} - JNM</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -26,16 +26,16 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="{{path('app_accueil')}}" class="logo">
+                        <a href="{{path('app_projet')}}" class="logo">
                             JNM
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="{{path('app_accueil')}}" class="active">Accueil</a></li>
+                            <li class="scroll-to-section"><a href="#top" class="active">Accueil</a></li>
                             <li class="scroll-to-section"><a href="#about" class="active">À propos</a></li>
                             <li class="scroll-to-section"><a href="#connexion">Connexion</a></li>
-                            <li class="scroll-to-section"><a href="{{path('app_inscription')}}">Inscription</a></li>
+                            <li class="scroll-to-section"><a href="{{path('app_register')}}">Inscription</a></li>
                             <li class="scroll-to-section"><a href="#réservation">Réservation</a></li>
                             <li class="scroll-to-section"><a href="#contact-us">Contactez-Nous</a></li>
                             
