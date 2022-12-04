@@ -58,7 +58,7 @@ class RegistrationFormType extends AbstractType
                 'mapped'=>false,
                 'multiple'=>true,
                 'expanded'=>true,
-                
+                'attr' => ['class'=>'form-control']
                 
             ])
             ->add('agreeTerms', CheckboxType::class, [

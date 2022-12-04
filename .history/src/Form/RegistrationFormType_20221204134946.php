@@ -10,7 +10,6 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -26,39 +25,22 @@ class RegistrationFormType extends AbstractType
             ->add('email', TextType::class, [
                 'attr' => ['class'=>'form-control']
             ])
-            ->add('nom', TextType::class, [
-                'attr' => ['class'=>'form-control']
-            ])
-            ->add('prenom', TextType::class, [
-                'attr' => ['class'=>'form-control']
-            ])
-            ->add('date_naissance', BirthdayType::class,[
-                'placeholder' => [
-                    'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour',
-                    'widget' => 'single_text',
-                    'input_format' => 'dd-mm-yyyy',
-
-                ]
-            ])
-            ->add('adresse', TextType::class, [
-                'attr' => ['class'=>'form-control']
-            ])
-            ->add('telephone', TextType::class, [
-                'attr' => ['class'=>'form-control']
-            ])
+            ->add('nom')
+            ->add('prenom')
+            ->add('date_naissance', BirthdayType::class,[])
+            ->add('adresse')
+            ->add('telephone')
             ->add('refMiage',EntityType::class,[
                 'class'=> Miage::class,
                 'placeholder'=>'Indiquez votre Miage',
-                'choice_label'=>'universite',
-                'attr' => ['class'=>'form-control']
+                'choice_label'=>'universite'
             ])
             ->add('statut', EntityType::class,[
                 'class'=> Statut::class,
                 'choice_label'=> 'nom',
                 'mapped'=>false,
                 'multiple'=>true,
-                'expanded'=>true,
-                
+                'expanded'=>true
                 
             ])
             ->add('agreeTerms', CheckboxType::class, [
@@ -68,16 +50,12 @@ class RegistrationFormType extends AbstractType
                         'message' => 'You should agree to our terms.',
                     ]),
                 ],
-                'label'=> 'J\'accepte que mes données soit utilisées.'
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'attr' => [
-                    'autocomplete' => 'new-password',
-                    'class'=>'form-control'
-                ],
+                'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',

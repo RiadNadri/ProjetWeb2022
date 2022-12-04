@@ -54,13 +54,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'refUser', targetEntity: AdminOnUsers::class)]
     private Collection $adminOnUsers;
 
-    #[ORM\ManyToMany(targetEntity: Statut::class, inversedBy: 'users')]
-    private Collection $statut;
-
     public function __construct()
     {
         $this->adminOnUsers = new ArrayCollection();
-        $this->statut = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -233,30 +229,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $adminOnUser->setRefUser(null);
             }
         }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Statut>
-     */
-    public function getStatut(): Collection
-    {
-        return $this->statut;
-    }
-
-    public function addStatut(Statut $statut): self
-    {
-        if (!$this->statut->contains($statut)) {
-            $this->statut->add($statut);
-        }
-
-        return $this;
-    }
-
-    public function removeStatut(Statut $statut): self
-    {
-        $this->statut->removeElement($statut);
 
         return $this;
     }

@@ -36,8 +36,8 @@ class RegistrationFormType extends AbstractType
                 'placeholder' => [
                     'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour',
                     'widget' => 'single_text',
-                    'input_format' => 'dd-mm-yyyy',
-
+                    'format' => 'dd-MM-yyyy',
+                    'attr' => ['class'=>'form-control']
                 ]
             ])
             ->add('adresse', TextType::class, [
@@ -49,16 +49,14 @@ class RegistrationFormType extends AbstractType
             ->add('refMiage',EntityType::class,[
                 'class'=> Miage::class,
                 'placeholder'=>'Indiquez votre Miage',
-                'choice_label'=>'universite',
-                'attr' => ['class'=>'form-control']
+                'choice_label'=>'universite'
             ])
             ->add('statut', EntityType::class,[
                 'class'=> Statut::class,
                 'choice_label'=> 'nom',
                 'mapped'=>false,
                 'multiple'=>true,
-                'expanded'=>true,
-                
+                'expanded'=>true
                 
             ])
             ->add('agreeTerms', CheckboxType::class, [
@@ -68,7 +66,6 @@ class RegistrationFormType extends AbstractType
                         'message' => 'You should agree to our terms.',
                     ]),
                 ],
-                'label'=> 'J\'accepte que mes données soit utilisées.'
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,

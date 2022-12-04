@@ -18,15 +18,13 @@ class Statut
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'statut')]
-    private Collection $users;
+    #[ORM\OneToMany(mappedBy: 'refStatut', targetEntity: StatutUsers::class)]
+    private Collection $statutUsers;
 
     public function __construct()
     {
-        $this->users = new ArrayCollection();
+        $this->statutUsers = new ArrayCollection();
     }
-
-    
 
     public function getId(): ?int
     {
@@ -46,30 +44,32 @@ class Statut
     }
 
     /**
-     * @return Collection<int, User>
+     * @return Collection<int, StatutUsers>
      */
-    public function getUsers(): Collection
+    public function getStatutUsers(): Collection
     {
-        return $this->users;
+        return $this->statutUsers;
     }
 
-    public function addUser(User $user): self
+    public function addStatutUser(StatutUsers $statutUser): self
     {
-        if (!$this->users->contains($user)) {
-            $this->users->add($user);
-            $user->addStatut($this);
+        if (!$this->statutUsers->contains($statutUser)) {
+            $this->statutUsers->add($statutUser);
+            $statutUser->setRefStatut($this);
         }
 
         return $this;
     }
 
-    public function removeUser(User $user): self
+    public function removeStatutUser(StatutUsers $statutUser): self
     {
-        if ($this->users->removeElement($user)) {
-            $user->removeStatut($this);
+        if ($this->statutUsers->removeElement($statutUser)) {
+            // set the owning side to null (unless already changed)
+            if ($statutUser->getRefStatut() === $this) {
+                $statutUser->setRefStatut(null);
+            }
         }
 
         return $this;
     }
-
 }

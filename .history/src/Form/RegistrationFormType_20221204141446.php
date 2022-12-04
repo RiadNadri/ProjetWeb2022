@@ -49,16 +49,14 @@ class RegistrationFormType extends AbstractType
             ->add('refMiage',EntityType::class,[
                 'class'=> Miage::class,
                 'placeholder'=>'Indiquez votre Miage',
-                'choice_label'=>'universite',
-                'attr' => ['class'=>'form-control']
+                'choice_label'=>'universite'
             ])
             ->add('statut', EntityType::class,[
                 'class'=> Statut::class,
                 'choice_label'=> 'nom',
                 'mapped'=>false,
                 'multiple'=>true,
-                'expanded'=>true,
-                
+                'expanded'=>true
                 
             ])
             ->add('agreeTerms', CheckboxType::class, [
@@ -68,7 +66,7 @@ class RegistrationFormType extends AbstractType
                         'message' => 'You should agree to our terms.',
                     ]),
                 ],
-                'label'=> 'J\'accepte que mes données soit utilisées.'
+                'label'=> 'J\'accepte que mes données soit utilisées pour divers usages propre à la Miage.'
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,

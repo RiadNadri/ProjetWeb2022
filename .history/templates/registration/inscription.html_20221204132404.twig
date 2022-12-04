@@ -3,7 +3,29 @@
 
 {% block title %}Inscription{% endblock %}
 
-
+<header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            JNM
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#top" >Accueil</a></li>
+                            <li class="scroll-to-section"><a href="#about">À propos</a></li>
+                            <li class="scroll-to-section"><a href="#connexion">Connexion</a></li>
+                            <li class="scroll-to-section"><a href="#contact-us" class="active">Contactez-Nous</a></li>
+                        </ul>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 
 {% block body %}
     
@@ -42,7 +64,7 @@
                             }) }}
                             {{ form_row(registrationForm.agreeTerms) }}
 
-                            <button type="submit" class="btn btn-primary my-3">M'inscrire</button>
+                            <button type="submit" class="btn">Register</button>
                         {{ form_end(registrationForm) }}
                     </div>
                 </div>
