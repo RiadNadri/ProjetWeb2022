@@ -33,12 +33,12 @@ class RegistrationFormType extends AbstractType
                 'attr' => ['class'=>'form-control']
             ])
             ->add('date_naissance', BirthdayType::class,[
-                'placeholder' => [
-                    'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour',
+                //'placeholder' => [
+                    //'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour',
                     //'widget' => 'single_text',
                     //'input_format' => 'dd-mm-yyyy',
 
-                ]
+                //]
                 
             ])
             ->add('adresse', TextType::class, [

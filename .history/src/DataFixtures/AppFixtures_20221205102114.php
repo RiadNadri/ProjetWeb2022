@@ -45,8 +45,6 @@ class AppFixtures extends Fixture
         $rennes->setUniversite('Rennes');
         $rennes->setNumtel(223233911);
 
-
-
         //Nice
         
         $nice=new Miage();
@@ -95,7 +93,6 @@ class AppFixtures extends Fixture
         $manager->persist($orleans);
         $manager->persist($rennes);
         $manager->persist($nice);
-        $manager->persist($nanterre);
 
         $manager->persist($etudiant);
         $manager->persist($diplome);

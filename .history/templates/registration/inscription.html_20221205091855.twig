@@ -17,9 +17,7 @@
                         </div>
                         
                     </div>
-                    <div style="margin-left: 99%; margin-top:118%;">
-                        +33
-                    </div>
+                    <div style="margin-left: 99%; margin-top:78%;">+33</div>
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-xs-12">
@@ -27,9 +25,7 @@
                         {{ form_start(registrationForm) }}
                             {{ form_row(registrationForm.nom) }}
                             {{ form_row(registrationForm.prenom) }}
-                            {{ form_row(registrationForm.date_naissance,{
-                                label:'Date de naissance'
-                            }) }}
+                            {{ form_row(registrationForm.date_naissance) }}
                             {{ form_row(registrationForm.adresse) }}
                             {{ form_row(registrationForm.refMiage, {
                                 label:'Miage de provenance'
