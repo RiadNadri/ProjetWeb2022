@@ -17,12 +17,13 @@
                     <div class="left-text-content">
                         <div class="section-heading">
                             <h6>Connectez-vous sur le portail<br>des Journées Nationales <br>de la MIAGE</h6>
-                        </div>
+                        
                         {% if app.user %}
                             <div class="mb-3">
                                 Vous êtes connecté comme {{ app.user.userIdentifier }}. <a href="{{ path('app_deconnexion') }}">Se deconnecter.</a>
                             </div>
                         {% endif %}
+                        </div>
                         
                     </div>
                     

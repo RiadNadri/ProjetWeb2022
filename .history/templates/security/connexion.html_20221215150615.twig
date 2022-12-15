@@ -8,7 +8,11 @@
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    
+    {% if app.user %}
+        <div class="section-heading">
+            Vous êtes connecté comme {{ app.user.userIdentifier }}, <a href="{{ path('app_deconnexion') }}">Logout</a>
+        </div>
+    {% endif %}
 
     <section class="section" id="about">
         <div class="container">
@@ -18,11 +22,6 @@
                         <div class="section-heading">
                             <h6>Connectez-vous sur le portail<br>des Journées Nationales <br>de la MIAGE</h6>
                         </div>
-                        {% if app.user %}
-                            <div class="mb-3">
-                                Vous êtes connecté comme {{ app.user.userIdentifier }}. <a href="{{ path('app_deconnexion') }}">Se deconnecter.</a>
-                            </div>
-                        {% endif %}
                         
                     </div>
                     
