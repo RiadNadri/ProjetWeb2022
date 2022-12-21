@@ -4,11 +4,23 @@ namespace App\DataFixtures;
 
 use App\Entity\Miage;
 use App\Entity\Statut;
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Faker;
 
 class AppFixtures extends Fixture
 {
+
+
+    public function __construct(private UserPasswordHasherInterface $passwordEncoder, private SluggerInterface $interface){
+
+    }
+
+
     public function load(ObjectManager $manager): void
     {
         // $product = new Product();
@@ -85,8 +97,27 @@ class AppFixtures extends Fixture
         $membreCA=new Statut();
         $membreCA->setNom('Membre de CA de l\'association');
 
+
+
+        //1er admin
+
+        $faker = Faker\Factory::create('fr_FR');
         
-        
+        $adminUN=new User();
+        $adminUN->setEmail('riadnadri@hotmail.fr');
+        $adminUN->setNom('Nadri');
+        $adminUN->setPrenom('Riad');
+        $adminUN->setDateNaissance($faker->dateTimeBetween('-2years', 'now'));
+        $adminUN->setAdresse('6 avenue du parc 92400 Courbevoie');
+        $adminUN->setTelephone(698173842);
+        $adminUN->setRefMiage($nanterre);
+        $adminUN->addStatut($dir);
+        $adminUN->setPassword(
+            $this->passwordEncoder->hashPassword($adminUN, 'admin92')
+        );
+        $adminUN->setRoles(['ROLE_ADMIN']);
+
+        $manager->persist($adminUN);
 
 
         $manager->persist($amiens);
