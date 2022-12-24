@@ -120,7 +120,6 @@ class AppFixtures extends Fixture
         $manager->persist($adminUN);
 
 
-
         $manager->persist($amiens);
         $manager->persist($dauphine);
         $manager->persist($sorbonne);

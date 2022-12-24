@@ -34,7 +34,6 @@
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="{{path('app_accueil')}}" >Accueil</a></li>
                             <li class="scroll-to-section"><a href="#about">À propos</a></li>
-                            
                             <li class="scroll-to-section"><a href="{{path('app_connexion')}}">Connexion</a></li>
                             {% if app.user %}
                                 <li class="scroll-to-section"><a href="#réservation">Réservation</a></li>
@@ -42,8 +41,8 @@
                                 <li class="scroll-to-section"><a href="{{path('app_deconnexion')}}">Deconnexion</a></li>
                             {% else %}
                                 <li class="scroll-to-section"><a href="{{path('app_inscription')}}">Inscription</a></li>
-                                <li class="scroll-to-section"><a href="{{path('app_admin')}}">Administration</a></li>
                             {% endif %}
+                            <li class="scroll-to-section"><a href="{{path('admin')}}">Administration</a></li>
                             <li class="scroll-to-section"><a href="#contact-us" class="active">Contactez-Nous</a></li>
                             
 

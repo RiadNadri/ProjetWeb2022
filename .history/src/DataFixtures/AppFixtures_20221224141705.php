@@ -119,6 +119,17 @@ class AppFixtures extends Fixture
 
         $manager->persist($adminUN);
 
+        // Création de nouveaux utilisateurs
+
+        for($i=0; $i<10; $i++){
+            $user=new User();
+            $user->setPrenom($faker->firstName);
+            $user->setNom($faker->lastName);
+            $user->setNom($faker->firstName);
+            $user->setNom($faker->firstName);
+            $user->setNom($faker->firstName);
+
+        }
 
 
         $manager->persist($amiens);

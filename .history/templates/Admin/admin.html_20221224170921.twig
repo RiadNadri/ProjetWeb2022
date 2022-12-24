@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Administration {% endblock %}
+
+
+{% block body %} 
+
+<style>
+    .buttonUser{
+        margin-top: 25%;
+        margin-bottom: 20%;
+        margin-left: 25%;
+    }
+    .buttonPartenaire{
+        margin-left:35%;
+        font-size: xx-large;
+    }
+</style>
+
+<div class="buttonUser">
+    <div class="btn btn-danger" >
+        <a href="{{path('app_user')}}">Utilisateurs</a>
+    </div>
+    <a class="buttonPartenaire" href="{{path('app_partenaire')}}">Partenaires</a>
+</div>
+{% endblock %}

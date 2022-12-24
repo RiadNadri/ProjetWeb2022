@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Administration {% endblock %}
+
+{% block body %} 
+
+<style>
+    .buttonUser{
+        margin-top: 25%;
+        margin-bottom: 20%;
+        margin-left: 25%;
+        font-size: large;
+    }
+</style>
+
+<div class="buttonUser" >
+    <a href="{{path('app_user')}}">Utilisateurs</a>
+</div>
+
+
+{% endblock %}

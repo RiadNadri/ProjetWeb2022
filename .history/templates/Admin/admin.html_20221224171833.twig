@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Administration {% endblock %}
+
+
+{% block body %} 
+
+<style>
+    .buttonUser{
+        margin-top: 0%;
+        margin-bottom: 10%;
+        margin-left: 25%;
+    }
+    .buttonPartenaire{
+        margin-left:35%;
+        font-size: xx-large;
+    }
+</style>
+
+<div class="buttonUser">
+    <div class="btn btn-light" >
+        <a href="{{path('app_user')}}">Utilisateurs</a>
+    </div>
+    <div class="btn btn-light" >
+        <a  href="{{path('app_partenaire')}}">Partenaires</a>
+    </div>
+</div>
+
+<div class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">Utilisateurs</h5>
+    <p class="card-text">Accéders aux données des utilisateurs.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<div class="card text-center">
+
+  <div class="card-body">
+    <h5 class="card-title">Partenaires</h5>
+    <p class="card-text">Accéders aux données des partenaires.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+{% endblock %}
