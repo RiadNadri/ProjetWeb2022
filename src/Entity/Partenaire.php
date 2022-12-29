@@ -27,8 +27,7 @@ class Partenaire
     #[ORM\Column]
     private ?int $dons_ou_aides = null;
 
-    #[ORM\OneToMany(mappedBy: 'refPartenaire', targetEntity: AdminOnPartenaires::class)]
-    private Collection $adminOnPartenaires;
+    
 
     public function __construct()
     {
@@ -88,33 +87,5 @@ class Partenaire
         return $this;
     }
 
-    /**
-     * @return Collection<int, AdminOnPartenaires>
-     */
-    public function getAdminOnPartenaires(): Collection
-    {
-        return $this->adminOnPartenaires;
-    }
-
-    public function addAdminOnPartenaire(AdminOnPartenaires $adminOnPartenaire): self
-    {
-        if (!$this->adminOnPartenaires->contains($adminOnPartenaire)) {
-            $this->adminOnPartenaires->add($adminOnPartenaire);
-            $adminOnPartenaire->setRefPartenaire($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAdminOnPartenaire(AdminOnPartenaires $adminOnPartenaire): self
-    {
-        if ($this->adminOnPartenaires->removeElement($adminOnPartenaire)) {
-            // set the owning side to null (unless already changed)
-            if ($adminOnPartenaire->getRefPartenaire() === $this) {
-                $adminOnPartenaire->setRefPartenaire(null);
-            }
-        }
-
-        return $this;
-    }
+   
 }

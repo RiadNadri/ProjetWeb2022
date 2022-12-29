@@ -51,8 +51,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?Miage $refMiage = null;
 
     
-    #[ORM\OneToMany(mappedBy: 'refUser', targetEntity: AdminOnUsers::class)]
-    private Collection $adminOnUsers;
+    
 
     #[ORM\ManyToMany(targetEntity: Statut::class, inversedBy: 'users')]
     private Collection $statut;
@@ -207,35 +206,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     
 
-    /**
-     * @return Collection<int, AdminOnUsers>
-     */
-    public function getAdminOnUsers(): Collection
-    {
-        return $this->adminOnUsers;
-    }
-
-    public function addAdminOnUser(AdminOnUsers $adminOnUser): self
-    {
-        if (!$this->adminOnUsers->contains($adminOnUser)) {
-            $this->adminOnUsers->add($adminOnUser);
-            $adminOnUser->setRefUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAdminOnUser(AdminOnUsers $adminOnUser): self
-    {
-        if ($this->adminOnUsers->removeElement($adminOnUser)) {
-            // set the owning side to null (unless already changed)
-            if ($adminOnUser->getRefUser() === $this) {
-                $adminOnUser->setRefUser(null);
-            }
-        }
-
-        return $this;
-    }
+    
 
     /**
      * @return Collection<int, Statut>
