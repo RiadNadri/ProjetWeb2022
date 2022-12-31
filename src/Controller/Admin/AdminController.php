@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\UserRepository;
+use App\Repository\PartenaireRepository;
 
 
 class AdminController extends AbstractController
@@ -28,11 +29,11 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/partenaire', name: 'app_partenaire')]
-    public function partenaire(): Response
+    #[Route('/admin/partenaire', name: 'app_part')]
+    public function partenaire(PartenaireRepository $partenaire): Response
     {
         return $this->render('admin/partners/partenaire.html.twig', [
-            'controller_name' => 'Partenaires des admins',
+            'partenaire' => $partenaire -> findBy([], ['id'=> 'asc'])
         ]);
     }
 }

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Partenaires{% endblock %}
+
+{% block body %}
+<section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6><br>Vous êtes partenaires ?<br><br>Enregistrez votre partenariat pour<br>les Journées Nationales de la MIAGE !</h6>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-text-content">
+                        {{ form_start(partenairesForm) }}
+                            {{ form_row(partenairesForm.nomSociete,{
+                                label:'Nom de la société'
+                            }) }}
+                            {{ form_row(partenairesForm.adresse,{
+                                label:'Adresse'
+                            }) }}
+                            {{ form_row(partenairesForm.contact,{
+                                label:'Contact (e-mail)'
+                            }) }}
+                            {{ form_row(partenairesForm.dons_ou_aides,{
+                                label:'Aides ou dons'
+                            }) }}
+                            <button type="submit" class="btn btn-primary my-3">M'inscrire</button>
+                        {{ form_end(partenairesForm) }}
+                    </div>
+                </div>
+
+
+                
+            </div>
+                        
+        </div> 
+    </section>
+{% endblock %}
