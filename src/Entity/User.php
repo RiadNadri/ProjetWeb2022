@@ -56,10 +56,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToMany(targetEntity: Statut::class, inversedBy: 'users')]
     private Collection $statut;
 
+    #[ORM\ManyToOne(inversedBy: 'users')]
+    private ?TitreTransport $refTitre = null;
+
+    #[ORM\ManyToMany(targetEntity: Activite::class, inversedBy: 'users')]
+    private Collection $refActivite;
+
     public function __construct()
     {
         $this->adminOnUsers = new ArrayCollection();
         $this->statut = new ArrayCollection();
+        $this->refActivite = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -228,6 +235,42 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function removeStatut(Statut $statut): self
     {
         $this->statut->removeElement($statut);
+
+        return $this;
+    }
+
+    public function getRefTitre(): ?TitreTransport
+    {
+        return $this->refTitre;
+    }
+
+    public function setRefTitre(?TitreTransport $refTitre): self
+    {
+        $this->refTitre = $refTitre;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Activite>
+     */
+    public function getRefActivite(): Collection
+    {
+        return $this->refActivite;
+    }
+
+    public function addRefActivite(Activite $refActivite): self
+    {
+        if (!$this->refActivite->contains($refActivite)) {
+            $this->refActivite->add($refActivite);
+        }
+
+        return $this;
+    }
+
+    public function removeRefActivite(Activite $refActivite): self
+    {
+        $this->refActivite->removeElement($refActivite);
 
         return $this;
     }

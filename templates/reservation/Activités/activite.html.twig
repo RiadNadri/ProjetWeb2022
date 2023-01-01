@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Activités{% endblock %}
+
+{% block body %}
+<section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6><br>Vous êtes partenaires ?<br><br>Enregistrez votre partenariat pour<br>les Journées Nationales de la MIAGE !</h6>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-text-content">
+                        {{ form_start(activiteForm) }}
+                            {{ form_row(activiteForm.refActivite,{
+                                label:'Activité'
+                            }) }}
+                            <button type="submit" class="btn btn-primary my-3">Réserver</button>
+                        {{ form_end(activiteForm) }}
+                    </div>
+                </div>
+
+
+                
+            </div>
+                        
+        </div> 
+    </section>
+{% endblock %}

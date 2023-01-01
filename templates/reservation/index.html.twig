@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation {% endblock %}
+
+{% block body %}
+<section class="section" id="about">    
+    <div class="container">
+        
+        <div class="row justify-content-center mt-5">
+        <h1> Faites vos différentes réservations !</h1>
+        <div class="col-sm-6 mb-3 mb-sm-0 mt-5">
+            <div class="card text-white bg-secondary">
+            <div class="card-body">
+                <h5 class="card-title">Titre de transport</h5>
+                <p class="card-text text-white">Choisissez et réservez le titre de transport pour votre séjour à Paris. &#128650;</p>
+                <a href="#" class="btn btn-dark mt-3">Réserver</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mt-5">
+            <div class="card text-white bg-secondary ">
+            <div class="card-body">
+                <h5 class="card-title">Activités</h5>
+                <p class="card-text text-white">Envie de participer à d'autres activités ? Jetez un coup d'oeil ! &#128521;</p>
+                <a href="{{path('app_activite')}}" class="btn btn-dark mt-3">Réserver</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mt-5">
+            <div class="card text-white bg-secondary  ">
+            <div class="card-body ">
+                <h5 class="card-title d-flex justify-content-center">Logement</h5>
+                <p class="card-text text-white d-flex justify-content-center">Où se loger ? &#128716;</p>
+                <a href="https://www.airbnb.fr/" class="btn btn-dark d-flex justify-content-center mt-3">Réserver</a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
