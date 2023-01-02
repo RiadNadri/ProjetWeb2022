@@ -4,8 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Activite;
 use App\Entity\User;
+use App\Entity\TitreTransport;
 use App\Form\RFormType;
 use App\Form\ActiviteFormType;
+use App\Form\TitreFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -45,10 +47,23 @@ class ReservationController extends AbstractController
     }
 
     #[Route('/reservation/titret', name: 'app_titre')]
-    public function titre(): Response
+    public function titre(Request $request, EntityManagerInterface $entityManager): Response
     {
-        return $this->render('reservation/index.html.twig', [
-            'controller_name' => 'ReservationController',
+        $titre= $this->getUser();
+        $form = $this->createForm(TitreFormType::class, $titre);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+    
+            $entityManager->persist($titre);
+            $entityManager->flush();
+            // do anything else you need here, like send an email
+
+            return $this->redirectToRoute('app_reservation');
+        }
+
+        return $this->render('reservation/titre/titre.html.twig', [
+            'titreForm' => $form->createView(),
         ]);
     }
 }

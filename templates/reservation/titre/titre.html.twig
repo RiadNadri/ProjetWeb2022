@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Activités{% endblock %}
+
+{% block body %}
+<section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6><br>Facilitez vos déplacements sur Paris</br><br>grâce au titre de transport de votre choix</br>pour les Journées Nationales de la MIAGE !</h6>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-text-content">
+                        {{ form_start(titreForm) }}
+                            {{ form_row(titreForm.refTitre,{
+                                label:'Titre de transport'
+                            }) }}
+                            <button type="submit" class="btn btn-primary my-3">Réserver</button>
+                        {{ form_end(titreForm) }}
+                    </div>
+                </div>
+
+
+                
+            </div>
+                        
+        </div> 
+    </section>
+{% endblock %}
