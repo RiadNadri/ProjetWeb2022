@@ -70,6 +70,18 @@
                             <p class="text-muted mb-0">{{app.user.refMiage}}</p>
                         </div>
                         </div>
+                        <hr>
+                        <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Statut</p>
+                        </div>
+                        <div class="col-sm-9">
+                            {% for statut in app.user.statut %}
+                            <p class="text-muted mb-0"> &#8226;  {{statut.nom}}</p>
+                            {% endfor %}
+                            
+                        </div>
+                        </div>
                         
                     </div>
                     </div>

@@ -62,6 +62,15 @@ class EditProfileFormType extends AbstractType
                 'choice_label'=>'universite',
                 'attr' => ['class'=>'form-control']
             ])
+            ->add('statut', EntityType::class,[
+                'class'=> Statut::class,
+                'choice_label'=> 'nom',
+                
+                'multiple'=>true,
+                'expanded'=>true,
+                
+                
+            ])
         ;
     }
 

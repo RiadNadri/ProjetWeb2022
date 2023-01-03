@@ -56,7 +56,7 @@ class RegistrationFormType extends AbstractType
             ->add('statut', EntityType::class,[
                 'class'=> Statut::class,
                 'choice_label'=> 'nom',
-                'mapped'=>false,
+                
                 'multiple'=>true,
                 'expanded'=>true,
                 
