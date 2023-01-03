@@ -1,22 +1,105 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProfilController!{% endblock %}
+{% block title %}Profil de {{app.user.prenom}}{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section class="section" id="about">
+        <div class="container">
+        <h1 class="mt-5">MON PROFIL</h1>
+        <section>
+            <div class="container py-5 mt-5">
+                
+                <div class="row">
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="{{ asset('img/log.png')}}" alt="avatar"
+                        class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3">{{app.user.prenom}} {{app.user.nom}}</h5>
+                        <div class="d-flex justify-content-center mb-2">
+                        <a href="{{path('app_edit')}}" class="btn btn-dark">Modifier mon profil</a>
+                        </div>
+                    </div>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Nom complet</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{app.user.prenom}} {{app.user.nom}}</p>
+                        </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">E-mail</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{app.user.email}}</p>
+                        </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Téléphone</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">0{{app.user.telephone}}</p>
+                        </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Adresse</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{app.user.adresse}}</p>
+                        </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Miage</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{app.user.refMiage}}</p>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4 mb-md-0">
+                        <div class="card-body">
+                            <p class="mb-4">  Activités auxquelles je suis inscrit :
+                            </p>
+                            {% for activ in app.user.refActivite %}
+                            <p class="mb-1" style="font-size: .77rem;"> &#8226;  {{activ.nom}}</p>
+                            {% endfor %}
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 mb-md-0">
+                        <div class="card-body">
+                            <p class="mb-4"> Mon titre de transport :
+                            </p>
+                            <p class="mb-1" style="font-size: .77rem;">{{app.user.refTitre }}</p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+</section>
 
-<section class ="section">
-    <div class="example-wrapper">
-        <h1>Hello {{ controller_name }}! ✅</h1>
-
-        This friendly message is coming from:
-        <ul>
-            <li>Your controller at <code><a href="{{ 'C:/wamp64/www/ProjetWeb2022/src/Controller/ProfilController.php'|file_link(0) }}">src/Controller/ProfilController.php</a></code></li>
-            <li>Your template at <code><a href="{{ 'C:/wamp64/www/ProjetWeb2022/templates/profil/index.html.twig'|file_link(0) }}">templates/profil/index.html.twig</a></code></li>
-        </ul>
-    </div>
+        </div>
 </section>
 {% endblock %}

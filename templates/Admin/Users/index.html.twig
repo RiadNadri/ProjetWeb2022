@@ -17,18 +17,23 @@
                             <th scope="col">E-Mail</th>
                             <th scope="col">Adresse</th>
                             <th scope="col">Téléphone</th>
+                            <th scope="col">Miage</th>
+                            <th scope="col">Date de naissance</th>
+                            <th scope="col">Mot de passe</th>
                         </tr>
                         </thead>
                         <tbody>
                         {% for us in user %}
                             <tr>
-                                
                                 <th scope="row">{{ us.id }}</th>
                                 <td>{{ us.prenom }}</td>
                                 <td>{{ us.nom }}</td>
                                 <td>{{ us.email }}</td>
                                 <td>{{ us.adresse }}</td>
                                 <td>0{{ us.telephone }}</td>
+                                <td>{{ us.refMiage }}</td>
+                                <td>{{ us.datenaissance|date('Y-m-d') }}</td>
+                                <td>{{ us.password }}</td>
                             </tr>
                         {% endfor %}
                         </tbody>

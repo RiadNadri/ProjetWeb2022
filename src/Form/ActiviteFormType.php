@@ -17,9 +17,10 @@ class ActiviteFormType extends AbstractType
             ->add('refActivite', EntityType::class,[
                 'class' => Activite::class,
                 'placeholder'=>'Choisissez la ou les activités',
-                'choice_label'=>'nom',
+                'choice_label'=>'nom', 
                 'multiple' => true,
-                'attr' => ['class'=>'form-control']
+                
+                'expanded'=>true,
             ])
         ;
     }

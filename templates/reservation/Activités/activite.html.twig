@@ -6,21 +6,52 @@
 <section class="section" id="about">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-xs-12">
-                    <div class="left-text-content">
-                        <div class="section-heading">
-                            <h6><br>Vous êtes partenaires ?<br><br>Enregistrez votre partenariat pour<br>les Journées Nationales de la MIAGE !</h6>
-                        </div>
-                        
+                <div class="col-sm-6">
+                    <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Site web node JS</h5>
+                        <p class="card-text">Tentez de réaliser un site web en utilisant le framework Noje JS !</p>
+                        <p class="card-text">Date : 25/05/2023</p>
                     </div>
-                    
+                    </div>
                 </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Match de foot</h5>
+                        <p class="card-text">Venez participer à un super match de football à 11 contre 11 !</p>
+                        <p class="card-text">Date : 03/06/2023</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mt-5">
+                    <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bowling</h5>
+                        <p class="card-text">Venez faire une partie de bowling accompagné d'étudiant en Master tout en échangeant sur leur parcours ! </p>
+                        <p class="card-text">Date : 25/05/2023</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mt-5">
+                    <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">Faites vos preuves en code et essayez de développer l'algorithme de tri le plus efficace possible !</p>
+                        <p class="card-text">Date : 26/05/2023</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+            
+                
 
                 <div class="col-lg-6 col-md-6 col-xs-12">
                     <div class="right-text-content">
                         {{ form_start(activiteForm) }}
                             {{ form_row(activiteForm.refActivite,{
-                                label:'Activité'
+                                label:'Activités'
                             }) }}
                             <button type="submit" class="btn btn-primary my-3">Réserver</button>
                         {{ form_end(activiteForm) }}

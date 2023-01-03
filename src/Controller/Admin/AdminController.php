@@ -2,11 +2,14 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\UserRepository;
 use App\Repository\PartenaireRepository;
+use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 
 class AdminController extends AbstractController
@@ -36,4 +39,5 @@ class AdminController extends AbstractController
             'partenaire' => $partenaire -> findBy([], ['id'=> 'asc'])
         ]);
     }
+
 }

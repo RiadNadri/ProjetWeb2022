@@ -119,6 +119,101 @@ class AppFixtures extends Fixture
 
         $manager->persist($adminUN);
 
+        //User 1
+
+        $faker = Faker\Factory::create('fr_FR');
+        
+        $user1=new User();
+        $user1->setEmail($faker->email);
+        $user1->setNom($faker->name);
+        $user1->setPrenom('Riad');
+        $user1->setDateNaissance($faker->dateTimeBetween('-26years', '-20years'));
+        $user1->setAdresse($faker->address);
+        $user1->setTelephone(58968296);
+        $user1->setRefMiage($orleans);
+        $user1->addStatut($etudiant);
+        $user1->setPassword(
+            $this->passwordEncoder->hashPassword($user1, 'etudiant1')
+        );
+        $user1->setRoles(['ROLE_USER']);
+
+        $manager->persist($user1);
+
+        //User 2
+        
+        $user2=new User();
+        $user2->setEmail($faker->email);
+        $user2->setNom($faker->name);
+        $user2->setPrenom($faker->firstNameMale);
+        $user2->setDateNaissance($faker->dateTimeBetween('-26years', '-20years'));
+        $user2->setAdresse($faker->address);
+        $user2->setTelephone(581069280);
+        $user2->setRefMiage($orleans);
+        $user2->addStatut($etudiant);
+        $user2->setPassword(
+            $this->passwordEncoder->hashPassword($user2, 'etudiant1')
+        );
+        $user2->setRoles(['ROLE_USER']);
+
+        $manager->persist($user2);
+
+
+        //User 3
+        
+        $user3=new User();
+        $user3->setEmail($faker->email);
+        $user3->setNom($faker->name);
+        $user3->setPrenom($faker->firstNameMale);
+        $user3->setDateNaissance($faker->dateTimeBetween('-26years', '-20years'));
+        $user3->setAdresse($faker->address);
+        $user3->setTelephone(296037563);
+        $user3->setRefMiage($orleans);
+        $user3->addStatut($teacher);
+        $user3->setPassword(
+            $this->passwordEncoder->hashPassword($user3, 'etudiant1')
+        );
+        $user3->setRoles(['ROLE_USER']);
+
+        $manager->persist($user3);
+
+        
+
+
+        //User 4
+        
+        $user4=new User();
+        $user4->setEmail($faker->email);
+        $user4->setNom($faker->lastName);
+        $user4->setPrenom($faker->firstNameFemale);
+        $user4->setDateNaissance($faker->dateTimeBetween('-26years', '-20years'));
+        $user4->setAdresse($faker->address);
+        $user4->setTelephone(491274569);
+        $user4->setRefMiage($nice);
+        $user4->addStatut($etudiant);
+        $user4->setPassword(
+            $this->passwordEncoder->hashPassword($user4, 'etudiant1')
+        );
+        $user4->setRoles(['ROLE_USER']);
+
+        $manager->persist($user4);
+
+        //User 5
+        
+        $user5=new User();
+        $user5->setEmail($faker->email);
+        $user5->setNom($faker->lastName);
+        $user5->setPrenom($faker->firstNameFemale);
+        $user5->setDateNaissance($faker->dateTimeBetween('-26years', '-20years'));
+        $user5->setAdresse($faker->address);
+        $user5->setTelephone(491045728);
+        $user5->setRefMiage($rennes);
+        $user5->addStatut($membreBDE);
+        $user5->setPassword(
+            $this->passwordEncoder->hashPassword($user5, 'etudiant1')
+        );
+        $user5->setRoles(['ROLE_USER']);
+
+        $manager->persist($user5);
 
 
         $manager->persist($amiens);

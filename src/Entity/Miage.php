@@ -103,6 +103,11 @@ class Miage
         return $this;
     }
 
+    public function __toString(): string
+    {
+        return $this->universite;
+    }
+
     
     
 }
